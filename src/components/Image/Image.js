@@ -1,4 +1,5 @@
 import styles from './Image.module.scss';
+import PropTypes from 'prop-types';
 
 const Image = props => {
   return (
@@ -10,5 +11,11 @@ const Image = props => {
     </div>
   );
 };
+
+Image.propTypes = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  currentColor: PropTypes.string.isRequired,
+}
 
 export default Image;

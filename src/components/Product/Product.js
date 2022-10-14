@@ -39,23 +39,6 @@ const Product = props => {
           setCurrentColor={setCurrentColor}
           sizes={props.sizes}
           colors={props.colors} />
-        {/* <form onSubmit={handleSubmit}>
-          <div className={styles.sizes}>
-            <h3 className={styles.optionLabel}>Sizes</h3>
-            <ul className={styles.choices}>
-              {props.sizes.map(size => <li key={size.name}><button type="button" onClick={() => setCurrentSize(size.name)} className={clsx(size.name === currentSize && styles.active)}>{size.name}</button></li>)}
-            </ul>
-          </div>
-          <div className={styles.colors}>
-            <h3 className={styles.optionLabel}>Colors</h3>
-            <ul className={styles.choices}>
-              {props.colors.map(color => <li key={color}><button type="button" onClick={() => setCurrentColor(color)} className={clsx(styles[currentColorClassName(color)], color === currentColor && styles.active)} /></li>)}
-            </ul>
-          </div>
-          <Button className={styles.button}>
-            <span className="fa fa-shopping-cart" />
-          </Button>
-        </form> */}
       </div>
     </article>
   )
@@ -67,7 +50,7 @@ Product.propTypes = {
   title: PropTypes.string.isRequired,
   basePrice: PropTypes.number.isRequired,
   colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-  sizes: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, additionalPrice: PropTypes.number })).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.exact({ name: PropTypes.string, additionalPrice: PropTypes.number })).isRequired,
 }
 
 export default Product;
